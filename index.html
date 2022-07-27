@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LOVE CALCULATOR</title>
+<style>
+	*{
+		margin:0;
+		padding:0;
+	}
+	body{
+		background-color: black;
+	}
+	h1{
+		color:#FF1493;
+		margin-top: 20px;
+	}
+	input{
+		margin:5px;
+		height:36px;
+		border:2px solid pink;
+		text-align:center;
+		width:175px;
+		box-sizing: border-box;
+	}
+	.box{
+		width:650px;
+		height:415px;
+		background-color:black;
+		border:12px solid pink;
+		box-shadow: 2px pink;
+		border-radius: 20px;
+		text-align: center;
+		margin:60px 350px;
+	}
+	#but{
+		
+
+		width:200px;
+		height:38px;
+		color:white;
+		background-color: crimson;
+		cursor: pointer;
+
+	}
+	p{
+		color:#FF1493;
+		background-color:black;
+		margin:100px;
+		font-size:24px;
+	}
+	#disp{
+		color:#FF1493;
+		background-color: black;} 
+
+
+    @media (max-width:1000px )
+    {
+    	.box{
+    		display: block;
+    		margin:80px auto;
+    		font-size: 32px;
+    	}
+    	#disp{
+    		font-size:28px;
+
+    	}
+    	p{
+    		font-size:32px;
+    	}
+    	#but{
+    		font-size:26px;
+    		height:50px;
+
+    	}
+    	.content #Nameone{
+    		font-size:26px;
+    	}
+    	.content #Nametwo{
+    		font-size:26px;
+    	}
+    } 
+
+
+		
+
+</style>	
+</head>
+<body>
+<div class="box">
+<h1>Love Calculator</h1>	
+<span style="color:red">&#x2764;&#x2764;&#x2764;</span><br>
+<div class="content">
+<input type="text" id="Nameone" placeholder="Your name">
+<input type="text" id="Nametwo" placeholder="Partner name">	
+<button id="but" onclick="love()">Calculate</button>
+<p id="Relation"></p><br>
+<p id="disp"></p>	
+</div>
+</div>	
+</body>
+<script>
+	function love()
+	{
+		let a=document.getElementById('Nameone').value;
+		let b=document.getElementById('Nametwo').value;
+		if(a.length<=3)
+		{
+			alert("Please Enter at least 3 charracter")
+		}
+		if(b.length<=3)
+		{
+			alert("Please Enter at least 3 charracter");
+		}
+		else{
+		let random=Math.floor(Math.random()*100);
+		document.getElementById('Relation').innerHTML=a +"+"+b +"="+random +"%";
+		if(random>=10 && random<=50)
+	{
+		document.getElementById('disp').innerHTML="Average Relationship";
+	}
+	else if(random>=90)
+	{
+        document.getElementById('disp').innerHTML="Best Relationship";
+	}
+	else if(random>=50)
+	{
+		document.getElementById('disp').innerHTML="Good Relationship";
+	}
+	else
+	{
+        document.getElementById('disp').innerHTML="Bad Relationship";
+	}
+
+	}
+	}
+</script>
+</html>
